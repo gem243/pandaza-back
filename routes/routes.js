@@ -5,6 +5,7 @@ const router = express.Router();
 
 // rutas de recetas
 router.get("/recetas", recetasController.getAll);
+router.get("/recetas/:username", recetasController.getByUsername);
 router.get("/recetas/:nameReceta", recetasController.getByCode);
 //: hace referencia a una variable - busqueda de un elemento especifico
 router.post("/recetas", recetasController.insert);

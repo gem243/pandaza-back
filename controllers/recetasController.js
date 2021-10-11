@@ -9,7 +9,17 @@ module.exports = class RecetasController {
         } catch (err) {
             res.status(404).json({ message: err.message });
         }
-        
+
+    }
+
+    static async getByUsername(req, res) {
+        const { username } = req.params;
+        try {
+            const recetas = await recetaModel.find({username});
+            res.status(200).json(recetas);
+        } catch (err) {
+            res.status(404).json({ message: err.message });
+        }
     }
 
     static async getByCode(req, res) {

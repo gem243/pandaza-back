@@ -35,7 +35,7 @@ module.exports = class UsuariosController {
                     expiresIn: '30d'
                 });
 
-                res.status(200).json({ token, name: usuarioExistente.name });
+                res.status(200).json({ token, name: usuarioExistente.name, id: usuarioExistente._id  });
             } else {
                 res.status(401).json({ message: "usuario o clave invalido" });
             }
